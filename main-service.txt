@@ -1,0 +1,17 @@
+//THIS CODE IS TO MAKE THE PROGRAM RUN AUTOMATICALLY WHILE BOOT THE RASPBERRY PI
+
+
+PATH:---  dytw@raspberrypi:/etc/systemd/system $ cat mini_main.service
+
+[Unit]
+Description=mini farm main2 all in one Service
+After=multi-user.target
+
+[Service]
+User=dytw
+WorkingDirectory=/home/dytw/Desktop/MiniFarm_Main
+Environment="PATH=/home/dytw/Desktop/myvenv/bin"
+ExecStart=/home/dytw/Desktop/myvenv/bin/python /home/dytw/Desktop/MiniFarm_Main/                                                                                                                                   mini2.py
+
+[Install]
+WantedBy=multi-user.target
